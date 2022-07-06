@@ -1,0 +1,50 @@
+1.1
+
+a	f1(n) = (n ^ 0.999999)log n ~ nlogn ~ O(nlogn)
+	f2(n) = 10000000n ~ O(n)
+	f3(n) = 1.000001^n ~ O(1)
+	f4(n) = n^2 ~ O(n^2)
+
+	O(f3(n)) < O(f2(n)) < O(f1(n)) < O(f4(n))
+
+	Wrong Answer.
+
+	The correct order is f1(n), f2(n), f4(n), f3(n).
+
+	Apparently for log n the upper bound is n^c for any c > 0. So log n = O(n^c) for any c > 0. So f1(n) can be rewritten as
+
+	f1(n) = (n ^ 0.99999)logn = O(n^0.99999 n^0.00001) = O(n) = O(f2(n))
+
+	f2(n) is linear and f4(n) is quadratic so f2(n) = O(f4(n))
+
+	f4(n) is quadratic and f3(n) is exponential so f4(n) = O(f3(n))
+
+b	f1(n), f4(n), f3(n), f2(n)
+
+	f1(n) is a constant. 
+	f4(n) is O(n^1.5) = O(n^2)
+	f3(n) is Quadratic
+	f2(n) is exponential
+
+c 	f4(n), f2(n), f3(n), f1(n)
+
+	Wrong Answer.
+
+	f4(n) = O(n^2)
+	f1(n) = n^(n^1.5) = 2 ^ (n^1.5  logn)
+	f3(n) = n^10 2^(n/2) = 2 ^ (log(n^10) + n/2)
+	f2(n) = 2 ^ n
+
+	Order is f4(n), f1(n), f3(n), f2(n)
+
+1.2
+
+a	Thought it was nlogn but no it is bound by n.
+
+b	Answer is nlogn
+
+c	Answer is n
+
+1.3
+
+
