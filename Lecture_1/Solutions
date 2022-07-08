@@ -47,4 +47,22 @@ c	Answer is n
 
 1.3
 
+a	Yes algorithm1 is correct.
+b	Yes algorithm2 is correct.
+c	No but i didnt answer it right.
+d	Yes algorithm4 is correct.
 
+1.4
+
+a	3	nlogn
+b	5	n^2
+c	Not correct. 2 	n
+d	2	n
+
+1.5
+
+TODO
+
+1.6
+
+Failed.
