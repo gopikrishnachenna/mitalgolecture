@@ -56,12 +56,27 @@ d	Yes algorithm4 is correct.
 
 a	3	nlogn
 b	5	n^2
-c	Not correct. 2 	n
+c	2 	n
 d	2	n
 
 1.5
 
-TODO
+1. If the peak problem is not empty, then algorithm4 will always return a location.
+
+Say that we start with a problem of size m x n. If the peak problem is not empty then the algorithm either returns a location or it recursives into subproblems. The only way the subproblem returns None is if it is empty. We will prove that will not happen. The division into sub problem is done by dividing either the rows or columns. To reach an empty subproblem the previous recursion should either have a 1 or 2 columns and the division should happen on columns or it should have 1 or 2 rows and the division should happen on rows. The proof is independent of the dimension. So let us assume that it is the columns which is reaching 1 or 2 first.
+
+Let us assume that the subproblem is column split and the problem is of dimension [m1, 1]. By the way the split of sub problem happens this subproblem should contain the "best seen" until now. The maximum which is found on this column will not have any neighbour so it becomes the neighbour. If best seen is less than the neighbour then best seen is updated to the neighbour. Best seen cannot be greater than neighbour because neighbour is the maximum in the subproblem. So the neighbour should be greater than or equal to the best seen and hence it is returned. 
+
+If the problem is of dimension [m1, 2].  
+i. The maximum is the neighbour and maximum is greater than or equal to best seen then that location is returned.
+ii. The maximum is not the neighbour then a split happens with the column containing the neighbour. The neighbour is greater than the maximum of column so the best seen is on the same column as neighbour. The subproblem becomes [m1,1] with a row split. Now if m1 is greater than 2 then there is a split and the next column split will be [m1/2, 1] and we hit the first case. If the m1 is 2 then it comes under this case. If m1 is 1 then a location should be returned based on first case.
+iii. The maximum is the neighbour and best seen is greater than maximum. then a split happens again with [m1, 1]. Refer previous point regarding this.
+
+2. If algorithm4 returns a location, it will be a peak in the original problem.
+
+The same proof for alogrithm1 works. The only difference is that the divison can happen either on the row or column. But the proof given is independent of dimension.
+
+Wrong. Forgot about the bestseen.
 
 1.6
 
